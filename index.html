@@ -27,7 +27,111 @@
     <title>Job Application Tracker</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header class="max-w-[1600px] mx-auto mt-5 px-5">
+      <div class="max-w-[1110px] mx-auto">
+        <h1 class="text-2xl sm:text-4xl mb-5 font-bold text-info">
+          Job Application Tracker
+        </h1>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-bold">
+          <div class="bg-primary/50 rounded-xl px-5 py-5">
+            <h4>Total</h4>
+            <p id="total" class="text-2xl">0</p>
+          </div>
+          <div class="bg-success/50 rounded-xl px-5 py-5">
+            <h4>Interview</h4>
+            <p id="interview" class="text-2xl text-success">0</p>
+          </div>
+          <div class="bg-error/50 rounded-xl px-5 py-5">
+            <h4>Rejected</h4>
+            <p id="rejected" class="text-2xl text-error">0</p>
+          </div>
+        </div>
+        <hr class="my-5" />
+      </div>
+    </header>
+    <main class="max-w-[1600px] mx-auto px-5">
+      <div class="max-w-[1110px] mx-auto">
+        <div class="flex justify-between font-bold">
+          <div>
+            <h3 class="text-xl sm:text-2xl">Available Jobs</h3>
+          </div>
+          <div>
+            <p><span>0</span> jobs</p>
+          </div>
+        </div>
+        <div class="flex gap-2 sm:gap-4 my-5">
+          <button id="allFilter" class="btn btn-primary">All</button>
+          <button id="interviewFilter" class="btn">Interview</button>
+          <button id="rejectedFilter" class="btn">Rejected</button>
+        </div>
+        <!-- Main Container -->
+        <div class="space-y-5">
+          <!-- Card -->
+          <div class="flex justify-between bg-base-300 p-5 rounded-2xl">
+            <div class="space-y-3">
+              <h3 class="companyName text-xl">Mobile First Corp</h3>
+              <p class="position text-[#64748B]">React Native Developer</p>
+              <div class="flex flex-wrap gap-1 text-[#64748B]">
+                <p class="location">Los Angeles, CA</p>
+                <p class="type">Part-time</p>
+                <p class="salary">$80,000 - $120,000</p>
+              </div>
+              <button class="statuss btn">Not Applied</button>
+              <p class="description text-[#323B49]">
+                Create stunning web experiences for high-profile clients. Must
+                have portfolio and experience with modern web design trends.
+              </p>
+              <div>
+                <button
+                  class="interviewBtn uppercase btn btn-outline btn-success"
+                >
+                  Interview
+                </button>
+                <button class="rejectedBtn uppercase btn btn-outline btn-error">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div>
+              <button class="cursor-pointer">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="flex justify-between bg-base-300 p-5 rounded-2xl">
+            <div class="space-y-3">
+              <h3 class="companyName text-xl">Mobile First Corp</h3>
+              <p class="position text-[#64748B]">React Native Developer</p>
+              <div class="flex flex-wrap gap-1 text-[#64748B]">
+                <p class="location">Los Angeles, CA</p>
+                <p class="type">Part-time</p>
+                <p class="salary">$80,000 - $120,000</p>
+              </div>
+              <button class="statuss btn">Not Applied</button>
+              <p class="description text-[#323B49]">
+                Create stunning web experiences for high-profile clients. Must
+                have portfolio and experience with modern web design trends.
+              </p>
+              <div>
+                <button
+                  class="interviewBtn uppercase btn btn-outline btn-success"
+                >
+                  Interview
+                </button>
+                <button class="rejectedBtn uppercase btn btn-outline btn-error">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div>
+              <button class="cursor-pointer">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
