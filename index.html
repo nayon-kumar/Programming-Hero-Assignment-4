@@ -64,10 +64,25 @@
           <button id="interviewFilter" class="btn">Interview</button>
           <button id="rejectedFilter" class="btn">Rejected</button>
         </div>
+        <!-- Filtered elements -->
+        <div id="allFilteredElemet" class="space-y-5"></div>
+
+        <!-- No jobs available -->
+        <div id="noJob" class="my-[100px] hidden">
+          <div class="text-center">
+            <img class="mx-auto" src="images/jobs.png" alt="" />
+            <h3 class="text-xl mt-5 font-bold">No jobs available</h3>
+            <p class="text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
+        </div>
         <!-- Main Container -->
-        <div class="space-y-5">
+        <div id="allCards" class="space-y-5 hidden">
           <!-- Card -->
-          <div class="flex justify-between bg-base-300 p-5 rounded-2xl">
+          <div
+            class="cardContainer flex justify-between bg-base-300 p-5 rounded-2xl"
+          >
             <div class="space-y-3">
               <h3 class="companyName text-xl">Mobile First Corp</h3>
               <p class="position text-[#64748B]">React Native Developer</p>
@@ -76,7 +91,11 @@
                 <p class="type">Part-time</p>
                 <p class="salary">$80,000 - $120,000</p>
               </div>
-              <button class="statuss btn uppercase">Not Applied</button>
+              <button
+                class="statuss bg-white/70 px-3 py-2 rounded-[5px] uppercase"
+              >
+                Not Applied
+              </button>
               <p class="description text-[#323B49]">
                 Create stunning web experiences for high-profile clients. Must
                 have portfolio and experience with modern web design trends.
@@ -93,25 +112,31 @@
               </div>
             </div>
             <div>
-              <button class="cursor-pointer">
+              <button class="btn px-3 py-2 rounded-full">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </div>
           </div>
           <!-- Card -->
-          <div class="flex justify-between bg-base-300 p-5 rounded-2xl">
+          <div
+            class="cardContainer flex justify-between bg-base-300 p-5 rounded-2xl"
+          >
             <div class="space-y-3">
-              <h3 class="companyName text-xl">Mobile First Corp</h3>
-              <p class="position text-[#64748B]">React Native Developer</p>
+              <h3 class="companyName text-xl">WebFlow Agency</h3>
+              <p class="position text-[#64748B]">Web Designer & Developer</p>
               <div class="flex flex-wrap gap-1 text-[#64748B]">
                 <p class="location">Los Angeles, CA</p>
                 <p class="type">Part-time</p>
                 <p class="salary">$80,000 - $120,000</p>
               </div>
-              <button class="statuss btn uppercase">Not Applied</button>
+              <button
+                class="statuss bg-white/70 px-3 py-2 rounded-[5px] uppercase"
+              >
+                Not Applied
+              </button>
               <p class="description text-[#323B49]">
-                Create stunning web experiences for high-profile clients. Must
-                have portfolio and experience with modern web design trends.
+                Transform complex data into compelling visualizations. Required
+                skills: D3.js, React, and strong analytical thinking.
               </p>
               <div>
                 <button
@@ -125,7 +150,47 @@
               </div>
             </div>
             <div>
-              <button class="cursor-pointer">
+              <button class="btn px-3 py-2 rounded-full">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Card -->
+          <div
+            class="cardContainer flex justify-between bg-base-300 p-5 rounded-2xl"
+          >
+            <div class="space-y-3">
+              <h3 class="companyName text-xl">DataViz Solutions</h3>
+              <p class="position text-[#64748B]">
+                Data Visualization Specialist
+              </p>
+              <div class="flex flex-wrap gap-1 text-[#64748B]">
+                <p class="location">Boston, MA</p>
+                <p class="type">Full-time</p>
+                <p class="salary">$125,000 - $165,000</p>
+              </div>
+              <button
+                class="statuss bg-white/70 px-3 py-2 rounded-[5px] uppercase"
+              >
+                Not Applied
+              </button>
+              <p class="description text-[#323B49]">
+                Design and maintain scalable backend systems using Python and
+                AWS. Work with modern DevOps practices and cloud infrastructure.
+              </p>
+              <div>
+                <button
+                  class="interviewBtn uppercase btn btn-outline btn-success"
+                >
+                  Interview
+                </button>
+                <button class="rejectedBtn uppercase btn btn-outline btn-error">
+                  Rejected
+                </button>
+              </div>
+            </div>
+            <div>
+              <button class="btn px-3 py-2 rounded-full">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </div>
