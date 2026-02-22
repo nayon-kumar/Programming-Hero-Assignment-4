@@ -22,6 +22,23 @@ rejectedFilter.addEventListener("click", function () {
   rejectedFilter.classList.add("btn-primary");
 });
 
+// Track which tab is active
+let currentTab = "all";
+allFilter.addEventListener("click", function () {
+  currentTab = "all";
+  filterObj(allList);
+});
+
+interviewFilter.addEventListener("click", function () {
+  currentTab = "interview";
+  filterObj(interviewList);
+});
+
+rejectedFilter.addEventListener("click", function () {
+  currentTab = "rejected";
+  filterObj(rejectedList);
+});
+
 // List and list calculation
 let allList = [];
 let interviewList = [];
@@ -60,10 +77,11 @@ allCards.forEach((card, index) => {
 updateAll();
 
 // Show all card
-function showAllCards() {
+function showAllCards(list) {
   const allFilteredElemet = document.getElementById("allFilteredElemet");
+  allFilteredElemet.innerHTML = "";
 
-  for (const card of allList) {
+  for (const card of list) {
     const div = document.createElement("div");
     div.innerHTML = `
     <div
@@ -104,9 +122,56 @@ function showAllCards() {
           </div>
     `;
     allFilteredElemet.appendChild(div);
+
+    // Select two button and add event listener
+    const interviewBtn = div.querySelector(".interviewBtn");
+    const rejectedBtn = div.querySelector(".rejectedBtn");
+    interviewBtn.addEventListener("click", function () {
+      moveToInterview(card.id);
+    });
+    rejectedBtn.addEventListener("click", function () {
+      moveToRejected(card.id);
+    });
   }
 }
-showAllCards();
+showAllCards(allList);
+
+// Refress function
+function refreshCurrentTab() {
+  if (currentTab === "all") {
+    showAllCards(allList);
+  } else if (currentTab === "interview") {
+    showAllCards(interviewList);
+  } else if (currentTab === "rejected") {
+    showAllCards(rejectedList);
+  }
+}
+
+// Move element
+function moveToInterview(id) {
+  const item = allList.find((item) => item.id === id);
+
+  if (!interviewList.find((item) => item.id === id)) {
+    interviewList.push(item);
+  }
+
+  rejectedList = rejectedList.filter((item) => item.id !== id);
+
+  updateAll();
+  refreshCurrentTab();
+}
+function moveToRejected(id) {
+  const item = allList.find((item) => item.id === id);
+
+  if (!rejectedList.find((item) => item.id === id)) {
+    rejectedList.push(item);
+  }
+
+  interviewList = interviewList.filter((item) => item.id !== id);
+
+  updateAll();
+  refreshCurrentTab();
+}
 
 // Passing all list
 allFilter.addEventListener("click", function () {
@@ -121,15 +186,15 @@ rejectedFilter.addEventListener("click", function () {
 
 // Filter object function
 function filterObj(obj) {
+  const allFilteredElemetHide = document.getElementById("allFilteredElemet");
+  const noJob = document.getElementById("noJob");
+
   if (obj.length == 0) {
-    const allFilteredElemetHide = document.getElementById("allFilteredElemet");
     allFilteredElemetHide.classList.add("hidden");
-    const noJob = document.getElementById("noJob");
     noJob.classList.remove("hidden");
   } else {
-    const allFilteredElemetHide = document.getElementById("allFilteredElemet");
     allFilteredElemetHide.classList.remove("hidden");
-    const noJob = document.getElementById("noJob");
     noJob.classList.add("hidden");
+    showAllCards(obj);
   }
 }
