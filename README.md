@@ -1,8 +1,8 @@
 # Programming-Hero-Assignment-4
 
-<p>To show the live preview <a href="https://nayon-kumar.github.io/Programming-Hero-Assignment-4/">Click Here</a></p>
+<p>To show the live demo <a href="https://nayon-kumar.github.io/Programming-Hero-Assignment-4/">Click Here</a></p>
 
-## Some question and answer
+## Some Question and Answer
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
