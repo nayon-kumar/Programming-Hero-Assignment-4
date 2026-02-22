@@ -146,8 +146,14 @@ function refreshCurrentTab() {
     showAllCards(allList);
   } else if (currentTab === "interview") {
     showAllCards(interviewList);
+    if (interviewList.length === 0) {
+      filterObj(interviewList);
+    }
   } else if (currentTab === "rejected") {
     showAllCards(rejectedList);
+    if (rejectedList.length === 0) {
+      filterObj(rejectedList);
+    }
   }
 }
 
