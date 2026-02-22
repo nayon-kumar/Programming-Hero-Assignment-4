@@ -44,6 +44,7 @@ let allList = [];
 let interviewList = [];
 let rejectedList = [];
 
+// Update header job count
 function updateAll() {
   document.getElementById("total").innerText = allList.length;
   document.getElementById("interview").innerText = interviewList.length;
@@ -160,16 +161,19 @@ function deleteCard(id) {
 // Refress function
 function refreshCurrentTab() {
   if (currentTab === "all") {
+    jobCount.innerText = allList.length;
     showAllCards(allList);
     if (allList.length === 0) {
       filterObj(allList);
     }
   } else if (currentTab === "interview") {
+    jobCount.innerText = `${interviewList.length} of ${allList.length}`;
     showAllCards(interviewList);
     if (interviewList.length === 0) {
       filterObj(interviewList);
     }
   } else if (currentTab === "rejected") {
+    jobCount.innerText = `${rejectedList.length} of ${allList.length}`;
     showAllCards(rejectedList);
     if (rejectedList.length === 0) {
       filterObj(rejectedList);
@@ -230,3 +234,16 @@ function filterObj(obj) {
     showAllCards(obj);
   }
 }
+
+// Set job count
+const jobCount = document.getElementById("jobCount");
+jobCount.innerText = allList.length;
+allFilter.addEventListener("click", function () {
+  jobCount.innerText = allList.length;
+});
+interviewFilter.addEventListener("click", function () {
+  jobCount.innerText = `${interviewList.length} of ${allList.length}`;
+});
+rejectedFilter.addEventListener("click", function () {
+  jobCount.innerText = `${rejectedList.length} of ${allList.length}`;
+});
