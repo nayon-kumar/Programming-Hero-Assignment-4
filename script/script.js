@@ -107,7 +107,7 @@ function showAllCards(list) {
               <p class="description text-[#323B49]">
                 ${card.description}
               </p>
-              <div>
+              <div class="flex gap-3 flex-wrap">
                 <button
                   class="interviewBtn uppercase btn btn-outline btn-success"
                 >
@@ -119,7 +119,7 @@ function showAllCards(list) {
               </div>
             </div>
             <div>
-              <button class="btn px-3 py-2 rounded-full">
+              <button class="deleteBtn btn px-3 py-2 rounded-full">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </div>
@@ -127,23 +127,43 @@ function showAllCards(list) {
     `;
     allFilteredElemet.appendChild(div);
 
-    // Select two button and add event listener
+    // Select three button and add event listener
     const interviewBtn = div.querySelector(".interviewBtn");
     const rejectedBtn = div.querySelector(".rejectedBtn");
+    const deleteBtn = div.querySelector(".deleteBtn");
+
     interviewBtn.addEventListener("click", function () {
       moveToInterview(card.id);
     });
+
     rejectedBtn.addEventListener("click", function () {
       moveToRejected(card.id);
+    });
+
+    deleteBtn.addEventListener("click", function () {
+      deleteCard(card.id);
     });
   }
 }
 showAllCards(allList);
 
+// Delete from list
+function deleteCard(id) {
+  allList = allList.filter((item) => item.id !== id);
+  interviewList = interviewList.filter((item) => item.id !== id);
+  rejectedList = rejectedList.filter((item) => item.id !== id);
+
+  updateAll();
+  refreshCurrentTab();
+}
+
 // Refress function
 function refreshCurrentTab() {
   if (currentTab === "all") {
     showAllCards(allList);
+    if (allList.length === 0) {
+      filterObj(allList);
+    }
   } else if (currentTab === "interview") {
     showAllCards(interviewList);
     if (interviewList.length === 0) {
