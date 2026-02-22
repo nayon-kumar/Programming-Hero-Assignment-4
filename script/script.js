@@ -95,10 +95,14 @@ function showAllCards(list) {
                 <p class="type">${card.type}</p>
                 <p class="salary">${card.salary}</p>
               </div>
-              <button
-                class="statuss bg-white/70 px-3 py-2 rounded-[5px] uppercase"
-              >
-                Not Applied
+              <button class="statuss px-3 py-2 rounded-[5px] uppercase ${
+                card.statuss === "Interview"
+                  ? "bg-green-200 text-green-700"
+                  : card.statuss === "Rejected"
+                    ? "bg-red-200 text-red-700"
+                    : "bg-white/70"
+              }">
+                ${card.statuss}
               </button>
               <p class="description text-[#323B49]">
                 ${card.description}
@@ -152,6 +156,7 @@ function moveToInterview(id) {
   const item = allList.find((item) => item.id === id);
 
   if (!interviewList.find((item) => item.id === id)) {
+    item.statuss = "Interview";
     interviewList.push(item);
   }
 
@@ -164,6 +169,7 @@ function moveToRejected(id) {
   const item = allList.find((item) => item.id === id);
 
   if (!rejectedList.find((item) => item.id === id)) {
+    item.statuss = "Rejected";
     rejectedList.push(item);
   }
 
