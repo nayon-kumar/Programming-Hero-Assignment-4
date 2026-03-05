@@ -2,38 +2,51 @@
 
 <p>To show the live demo <a href="https://nayon-kumar.github.io/Programming-Hero-Assignment-4/">Click Here</a></p>
 
-## Some Question and Answer
+## Job Application Tracker
 
-### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+A simple and interactive Job Application Tracker built with modern frontend technologies.  
+This application helps users keep track of job applications, mark their status (Interview or Rejected), filter jobs by status, and manage their application list easily.
 
-<p>Answer: </p>
-<p>getElementById select only one element. Like document.getElementById("studentId");</p>
-<p>getElementsByClassName select all element of the given class name. Like document.getElementsByClassName("allStudent"); </p>
-<p>querySelector only select first element of the given query. We can use it like CSS selector document.querySelector(".card"); </p>
-<p>querySelectorAll select all elements of the given query. We can use it like CSS selector ddocument.querySelectorAll(".card"); </p>
+## 🛠 Technologies Used
 
-### 2. How do you create and insert a new element into the DOM?
+- **HTML5** – Page structure
+- **CSS3**
+- **Tailwind CSS** – Utility-first CSS framework
+- **DaisyUI** – Tailwind CSS component library
+- **JavaScript (Vanilla JS)** – Application logic and DOM manipulation
+- **Font Awesome** – Icons
 
-<p>Answer: </p>
-<p>First, I will select the element where I want to add my new element like const container = document.getElementById("container");</p>
-<p>Second, I will create new element like const div = document.createElement("div");</p>
-<p>Third, I will add content what I want to add like div.innerText = "Hello world";</p>
-<p>Finally , I will append the child in the selected element like container.appendChild(div);</p>
+## 🚀 Features
 
-### 3. What is Event Bubbling? And how does it work?
+- View a list of available job opportunities
+- Track total job applications
+- Mark job status as **Interview** or **Rejected**
+- Filter jobs by:
+  - All
+  - Interview
+  - Rejected
+- Delete job entries from the list
+- Dynamic job count update
+- Empty state when no jobs are available
+- Responsive UI design
 
-<p>Answer: </p>
-<p>If I select an element first it will run on this element and go to the parent element. It's continiously go to the parent of parent element.</p>
-<p>It work like: Element → Parent → Grandparent → document → window</p>
+## ⚙️ How It Works
 
-### 4. What is Event Delegation in JavaScript? Why is it useful?
+1. All job cards are initially loaded into an **All Jobs list**.
+2. Users can change the status of a job using:
+   - **Interview button**
+   - **Rejected button**
+3. Jobs are automatically moved to their respective lists.
+4. The **filter buttons** allow users to view specific job statuses.
+5. The **Delete button** removes a job from all lists.
+6. The dashboard counters update automatically.
 
-<p>Answer: </p>
-<p>Using event delegation we can add a single event listener to a parent element instead of multiple event listener to child elements.</p>
-<p>It is usefull because we can we can only one event listener instead of many. It reduce time and memory also.</p>
+## 🎯 Learning Purpose
 
-### 5. What is the difference between preventDefault() and stopPropagation() methods?
+This project was created to practice:
 
-<p>Answer: </p>
-<p>preventDefault() stop the default browser behavior but does not stop bubbling. For example: using preventDefault we can stop form refreshes the page then page does not reload.</p>
-<p>stopPropagation() stop bubbling up to parent elements. It does not stop default behavior. For example: clicking a button inside a card stopPropagation stops the click from reaching the card</p>
+- DOM Manipulation
+- Event Handling in JavaScript
+- Array & Object Data Management
+- Dynamic UI Updates
+- Filtering Data in Frontend Applications
