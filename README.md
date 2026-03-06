@@ -1,8 +1,8 @@
-# Programming-Hero-Assignment-4
+# Job-Application-Tracker
 
-<p>To show the live demo <a href="https://nayon-kumar.github.io/Programming-Hero-Assignment-4/">Click Here</a></p>
+<p>To show the live demo <a href="https://nayon-kumar.github.io/Job-Application-Tracker/">Click Here</a></p>
 
-## Job Application Tracker
+---
 
 A simple and interactive Job Application Tracker built with modern frontend technologies.  
 This application helps users keep track of job applications, mark their status (Interview or Rejected), filter jobs by status, and manage their application list easily.
